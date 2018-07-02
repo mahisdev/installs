@@ -1,0 +1,31 @@
+link https://www.javahelps.com/2017/10/install-apache-maven-on-linux.html
+182  cd /opt
+  183  wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+  184  ls
+  185  tar -xvzf apache-maven-3.5.4-bin.tar.gz
+  186  ls
+  187  cat /etc/environment
+  188  cd /etc
+  189  ls env*
+  190  ls -al environment
+  191  vim /etc/environment
+  192  echo $PATH
+  193  export $PATH:/opt/apache-maven-3.5.4/bin
+  194  echo $PATH
+  195  export "$PATH:/opt/apache-maven-3.5.4/bin"
+  196  ls -al /opt/apache-maven-3.5.4/bin
+  197  PATH=/opt/apache-maven-3.5.4/bin:$PATH
+  198  export $PATH
+  199  cat /etc/environment
+  200  ln -s /usr/local/bin /opt/apache-maven-3.5.4/bin
+  201  ls -al /opt/apache-maven-3.5.4/bin
+  202  ln -s /opt/apache-maven-3.5.4/bin /usr/local/bin
+  203  ls -al /usr/local/bin
+  204  ls -al /opt/apache-maven-3.5.4/bin
+  205  update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.5.0/bin/mvn" 0
+  206  update-alternatives --install "/usr/bin/mvn" "mvn" "/opt/apache-maven-3.5.4/bin/mvn" 0
+  207  update-alternatives --set mvn /opt/apache-maven-3.5.4/bin/mvn
+  208  wget https://raw.github.com/dimaj/maven-bash-completion/master/bash_completion.bash --output-document /etc/bash_completion.d/mvn
+  209  mvn --version
+
+
